@@ -16,10 +16,21 @@
     var  canvas = document.getElementById("myCanvas");
     paper.setup(canvas);
     var path = new Path.Rectangle({
-    	point: view.center,
+    	point: [65,65],
     	size: [75, 75],
     	strokeColor: 'black'
     });
+
+    fitToContainer(canvas);
+
+  function fitToContainer(canvas){
+  // Make it visually fill the positioned parent
+  canvas.style.width ='100%';
+  canvas.style.height='100%';
+  // ...then set the internal size to match
+  canvas.width  = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
 
     function onFrame(event) {
     	// Each frame, rotate the path by 3 degrees:
@@ -124,12 +135,12 @@
         <!--  <p><a class="btn btn-ghost">Read more</a></p> -->
       </div>
     </section>
-    <canvas class = "background-gray-lightest" id="myCanvas" resize="true" height="700"></canvas>
     <section class="background-gray-lightest">
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <div class="post">
+              <canvas id="myCanvas" resize></canvas>
             </div>
           </div>
         </div>
