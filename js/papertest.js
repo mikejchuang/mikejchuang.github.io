@@ -1,3 +1,8 @@
+paper.install(window);
+	window.onload = function() {
+		paper.setup('myCanvas');
+
+
 var voronoi =  new Voronoi();
 var sites = generateBeeHivePoints(view.size / 200, true);
 var bbox, diagram;
@@ -116,4 +121,5 @@ function onKeyDown(event) {
 		selected = !selected;
 		renderDiagram();
 	}
+}
 }
