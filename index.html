@@ -9,10 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+    // Create a rectangle shaped path with its top left point at
+    // {x: 75, y: 75} and a size of {width: 75, height: 75}
+    // taken from paper.js tutorial
+    var path = new Path.Rectangle({
+    	point: [75, 75],
+    	size: [75, 75],
+    	strokeColor: 'black'
+    });
+
+    function onFrame(event) {
+    	// Each frame, rotate the path by 3 degrees:
+    	path.rotate(3);
+    }
+    </script>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script type="text/paperscript" src="js/papertest.js" canvas="myCanvas"></script>
-
     <!-- Font Awesome and Pixeden Icon Stroke icon fonts-->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
