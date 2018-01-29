@@ -13,8 +13,10 @@
     // Create a rectangle shaped path with its top left point at
     // {x: 75, y: 75} and a size of {width: 75, height: 75}
     // taken from paper.js tutorial
+    var  canvas = document.getElementById("myCanvas");
+    paper.setup(canvas);
     var path = new Path.Rectangle({
-    	point: [75, 75],
+    	point: view.center,
     	size: [75, 75],
     	strokeColor: 'black'
     });
@@ -122,10 +124,14 @@
         <!--  <p><a class="btn btn-ghost">Read more</a></p> -->
       </div>
     </section>
+    <canvas class = "background-gray-lightest" id="myCanvas" resize="true" height="700"></canvas>
     <section class="background-gray-lightest">
       <div class="container">
         <div class="row">
-            <canvas id="myCanvas" resize="true"></canvas>
+          <div class="col-sm-4">
+            <div class="post">
+            </div>
+          </div>
         </div>
         <!--<div class="row">
           <div class="col-sm-4">
